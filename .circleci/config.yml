@@ -6,12 +6,31 @@ jobs:
       - image: rocker/geospatial:latest
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - deps1-{{ .Branch }}-{{ checksum "DESCRIPTION" }}-{{ checksum ".circleci/config.yml" }}
+            - deps1-{{ .Branch }}
+            - deps1-
       - run:
           command: |
-            R -e 'devtools::install_deps(dependencies = TRUE)'
+            R -e "devtools::install_deps(dependencies = TRUE)"
+            R -e "devtools::install_github('mangothecat/goodpractice')"
+            R -e "install.packages('DT')"
       - run:
           command: |
             R -e 'devtools::check()'
+      - save_cache:
+          key: deps1-{{ .Branch }}-{{ checksum "DESCRIPTION" }}-{{ checksum ".circleci/config.yml" }}
+          paths:
+            - "/usr/local/lib/R/site-library"
+      - run:
+          no_output_timeout: 20m
+          command: |
+            mkdir /root/main/artifacts
+            R -e "devtools::install()"
+            R -e "goodpractice::gp(checks = grep('(rcmdcheck|covr)', goodpractice::all_checks(), invert=TRUE, value=TRUE))"
+            R -e "covr::codecov(quiet = FALSE)"
+            R CMD Rd2pdf --force --output='/root/main/artifacts/eddi-manual.pdf' .
       - store_artifacts:
-          path: man/
-          destination: man
+          path: /root/main/artifacts/
+          destination: artifacts
