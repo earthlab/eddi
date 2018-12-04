@@ -1,12 +1,14 @@
 Package: eddi
-Title: What the Package Does (One Line, Title Case)
+Title: R package to get Evaporative Demand Drought Index data
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "Max",
+           family = "Joseph",
            role = c("aut", "cre"),
-           email = "first.last@example.com")
-Description: What the package does (one paragraph).
+           email = "maxwell.b.joseph@colorado.eu")
+Description: Allows users to easily aquire and work with EDDI data. 
+URL: https://github.com/earthlab/eddi
+BugReports: https://github.com/earthlab/eddi/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
@@ -16,6 +18,7 @@ Imports:
     utils
 RoxygenNote: 6.1.1
 Suggests: 
+    covr,
     knitr,
     rmarkdown,
     testthat
