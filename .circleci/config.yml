@@ -15,6 +15,7 @@ jobs:
           command: |
             R -e "devtools::install_deps(dependencies = TRUE)"
             R -e "devtools::install_github('mangothecat/goodpractice')"
+            R -e "install_packages('DT')"
       - run:
           command: |
             R -e 'devtools::check()'
