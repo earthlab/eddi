@@ -4,7 +4,7 @@
 \alias{get_eddi}
 \title{Get EDDI data}
 \usage{
-get_eddi(date, timescale)
+get_eddi(date, timescale, dir = NA, overwrite = FALSE)
 }
 \arguments{
 \item{date}{An object of class Date or a character string formatted as
@@ -18,6 +18,12 @@ separates the number for the timescale (e.g., "1", "12") from the units
 (e.g., "week", "month"). Fractional timescales are not supported, and will
 be rounded to the nearest integer (e.g., "1.1 week" will be converted to
 "1 week").}
+
+\item{dir}{Directory to for downloaded EDDI data. By default this will be
+your cache directory. This should be a file path specified as a string.}
+
+\item{overwrite}{Boolean to indicate whether to overwrite EDDI data that
+already exist locally in \code{dir}. Defaults to FALSE.}
 }
 \value{
 A Raster* object containing EDDI data. Each layer in this object
