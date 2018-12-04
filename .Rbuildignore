@@ -1,4 +1,4 @@
-^\.travis\.yml$
+^\.circleci$
 ^CODE_OF_CONDUCT\.md$
 ^docs$
 ^_pkgdown\.yml$
