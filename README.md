@@ -4,6 +4,7 @@
 # eddi: R package for the NOAA Evaporative Demand Drought Index
 
 [![CircleCI](https://circleci.com/gh/earthlab/eddi/tree/master.svg?style=svg)](https://circleci.com/gh/earthlab/eddi/tree/master)
+[![Codecov](https://img.shields.io/codecov/c/github/earthlab/eddi.svg)](https://codecov.io/gh/earthlab/eddi)
 [![Project Status: WIP – Initial development is in progress, but there
 has not yet been a stable, usable release suitable for the
 public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
