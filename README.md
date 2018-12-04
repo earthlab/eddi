@@ -28,7 +28,7 @@ term droughts, e.g., “flash droughts”, and longer time scales are
 appropriate for detecting long term drought. For more information see
 <https://www.esrl.noaa.gov/psd/eddi/>.
 
-This is a basic example which shows you how to get EDDI data for Jan 1,
+This is a basic example which shows you how to get EDDI data for Nov 29,
 2018 at the one month timescale:
 
 ``` r
