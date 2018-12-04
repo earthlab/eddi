@@ -7,29 +7,29 @@ jobs:
     steps:
       - checkout
       - restore_cache:
-        keys:
-          - deps1-{{ .Branch }}-{{ checksum "DESCRIPTION" }}-{{ checksum ".circleci/config.yml" }}
-          - deps1-{{ .Branch }}
-          - deps1-
+          keys:
+            - deps1-{{ .Branch }}-{{ checksum "DESCRIPTION" }}-{{ checksum ".circleci/config.yml" }}
+            - deps1-{{ .Branch }}
+            - deps1-
       - run:
-        command: |
-          R -e "devtools::install_deps(dependencies = TRUE)"
-          R -e "devtools::install_github('mangothecat/goodpractice')"
+          command: |
+            R -e "devtools::install_deps(dependencies = TRUE)"
+            R -e "devtools::install_github('mangothecat/goodpractice')"
       - run:
-        command: |
-          R -e 'devtools::check()'
+          command: |
+            R -e 'devtools::check()'
       - save_cache:
-        key: deps1-{{ .Branch }}-{{ checksum "DESCRIPTION" }}-{{ checksum ".circleci/config.yml" }}
-        paths:
-          - "/usr/local/lib/R/site-library"
+          key: deps1-{{ .Branch }}-{{ checksum "DESCRIPTION" }}-{{ checksum ".circleci/config.yml" }}
+          paths:
+            - "/usr/local/lib/R/site-library"
       - run:
-        no_output_timeout: 20m
-        command: |
-          mkdir /root/main/artifacts
-          R -e "devtools::install()"
-          R -e "goodpractice::gp(checks = grep('(rcmdcheck|covr)', goodpractice::all_checks(), invert=TRUE, value=TRUE))"
-          R -e "cv <- covr::package_coverage(); print(cv); covr::report(x = cv, file = '/root/main/artifacts/eddi-coverage.html', browse=FALSE)"
-          R CMD Rd2pdf --force --output='/root/main/artifacts/eddi-manual.pdf' .
+          no_output_timeout: 20m
+          command: |
+            mkdir /root/main/artifacts
+            R -e "devtools::install()"
+            R -e "goodpractice::gp(checks = grep('(rcmdcheck|covr)', goodpractice::all_checks(), invert=TRUE, value=TRUE))"
+            R -e "cv <- covr::package_coverage(); print(cv); covr::report(x = cv, file = '/root/main/artifacts/eddi-coverage.html', browse=FALSE)"
+            R CMD Rd2pdf --force --output='/root/main/artifacts/eddi-manual.pdf' .
       - store_artifacts:
-        path: /root/main/artifacts/
-        destination: artifacts
+          path: /root/main/artifacts/
+          destination: artifacts
