@@ -3,6 +3,11 @@
 
 # eddi: R package for the NOAA Evaporative Demand Drought Index
 
+[![CircleCI](https://circleci.com/gh/mbjoseph/eddi/tree/master.svg?style=svg)](https://circleci.com/gh/mbjoseph/eddi/tree/master)
+[![Project Status: WIP – Initial development is in progress, but there
+has not yet been a stable, usable release suitable for the
+public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+
 The eddi package facilitates access to the NOAA [Evaporative Demand
 Drought Index](https://www.esrl.noaa.gov/psd/eddi/) (EDDI) data product.
 
