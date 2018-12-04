@@ -9,7 +9,7 @@
 has not yet been a stable, usable release suitable for the
 public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 
-The eddi package facilitates access to the NOAA [Evaporative Demand
+The eddi R package facilitates access to the NOAA [Evaporative Demand
 Drought Index](https://www.esrl.noaa.gov/psd/eddi/) (EDDI) data product.
 
 ## Installation
