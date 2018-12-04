@@ -1,8 +1,9 @@
+^\.travis\.yml$
 ^CODE_OF_CONDUCT\.md$
 ^docs$
 ^_pkgdown\.yml$
 ^README\.Rmd$
 ^revdep$
 ^LICENSE\.md$
-^reddi\.Rproj$
+^eddi\.Rproj$
 ^\.Rproj\.user$

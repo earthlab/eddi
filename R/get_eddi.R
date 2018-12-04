@@ -23,28 +23,24 @@
 #'
 #' @examples
 #' \dontrun{
-#' # looking for data on one day:
-#' get_eddi(date = "2018-01-01", lag_value = 12, lag_units = "months")
-#'
-#' # searching across a date range
-#' start_date <- as.Date("2015-06-01")
-#' end_date <- as.Date("2015-06-14")
-#' date_sequence <- seq(start_date, end_date, by = 1)
-#' get_eddi(date = date_sequence, lag_value = 1, lag_units = "week")
+#' get_eddi(date = "2018-01-01", timescale = "1 month")
 #' }
 #'
-#' @importFrom raster raster
 #' @export
 get_eddi <- function(date, timescale) {
   parsed_date <- parse_date(date)
   parsed_timescale <- parse_timescale(timescale)
+  ts_unit_abbrev <- ifelse(parsed_timescale[['units']] == 'week', 'wk', 'mn')
 
-  param_combos <- expand.grid(year = format(parsed_date, '%Y'),
-                              date_string = format(parsed_date, '%Y%m%d'),
-                              timescale_number = parsed_timescale[["number"]],
-                              timescale_units = parsed_timescale[["units"]])
-
-  # TODO: generate URLs to data files
+  urls <- paste0(
+    "ftp://ftp.cdc.noaa.gov/Projects/EDDI/CONUS_archive/data/",
+    format(parsed_date, "%Y"), "/",
+    "EDDI_ETrs_", parsed_timescale[["number"]], ts_unit_abbrev,
+    "_", format(parsed_date, "%Y%m%d"), ".asc"
+  )
+  r <- raster::stack(urls)
+  raster::crs(r) <- "+init=epsg:4326"
+  r
 }
 
 
@@ -63,17 +59,20 @@ parse_date <- function(date) {
   if (any(date > todays_date)) {
     stop("All provided dates must be <= the current date.")
   }
+  if (any(date <= as.Date('1980-01-01'))) {
+    stop("EDDI data are not available prior to 1980.")
+  }
   date
 }
 
 
 parse_timescale <- function(timescale) {
-  if (length_timescale != 1) {
-    stop("The timescale argument must have length one, e.g., '1 week'.")
+  if (length(timescale) != 1) {
+    stop("The timescale argument must have length one, e.g., '3 month'")
   }
 
   timescale_components <- unlist(strsplit(timescale, split = " "))
-  if (length(timescale_components != 2)) {
+  if (length(timescale_components) != 2) {
     stop("The timescale argument must have exactly one space, e.g., '1 week'.")
   }
 
@@ -84,7 +83,8 @@ parse_timescale <- function(timescale) {
   timescale_number <- sprintf("%02d", timescale_int)
 
   timescale_units <- timescale_components[2]
-  if (timescale_units != "week" | timescale_units != "month") {
+  valid_units <- c('week', 'month')
+  if (!(timescale_units %in% valid_units)) {
     stop("Timescale units must be one of 'week' or 'month', e.g., '6 week' or
          '10 month'")
   }

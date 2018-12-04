@@ -1,4 +1,4 @@
-Package: reddi
+Package: eddi
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
@@ -12,9 +12,9 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     raster
-Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1
 Suggests: 
     knitr,
-    rmarkdown
+    rmarkdown,
+    testthat
 VignetteBuilder: knitr
