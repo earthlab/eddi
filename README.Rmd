@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 
 # eddi: R package for the NOAA Evaporative Demand Drought Index
 
-[![CircleCI](https://circleci.com/gh/mbjoseph/eddi/tree/master.svg?style=svg)](https://circleci.com/gh/mbjoseph/eddi/tree/master)
+[![CircleCI](https://circleci.com/gh/earthlab/eddi/tree/master.svg?style=svg)](https://circleci.com/gh/earthlab/eddi/tree/master)
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 
 The eddi package facilitates access to the NOAA [Evaporative Demand Drought 
@@ -27,7 +27,7 @@ You can install the development version of eddi with devtools:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("mbjoseph/eddi")
+devtools::install_github("earthlab/eddi")
 ```
 
 ## Example
