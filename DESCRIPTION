@@ -6,7 +6,7 @@ Authors@R:
            family = "Joseph",
            role = c("aut", "cre"),
            email = "maxwell.b.joseph@colorado.edu")
-Description: Allows users to easily aquire and work with EDDI data. 
+Description: Allows users to easily acquire and work with EDDI data.
 URL: https://github.com/earthlab/eddi
 BugReports: https://github.com/earthlab/eddi/issues
 License: MIT + file LICENSE

@@ -5,7 +5,7 @@
   ],
   "@type": "SoftwareSourceCode",
   "identifier": "eddi",
-  "description": "Allows users to easily aquire and work with EDDI data. ",
+  "description": "Allows users to easily acquire and work with EDDI data.",
   "name": "eddi: R package to get Evaporative Demand Drought Index data",
   "codeRepository": "https://github.com/earthlab/eddi",
   "issueTracker": "https://github.com/earthlab/eddi/issues",
