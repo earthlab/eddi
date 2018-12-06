@@ -1,11 +1,11 @@
 Package: eddi
 Title: R package to get Evaporative Demand Drought Index data
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: 
     person(given = "Max",
            family = "Joseph",
            role = c("aut", "cre"),
-           email = "maxwell.b.joseph@colorado.eu")
+           email = "maxwell.b.joseph@colorado.edu")
 Description: Allows users to easily aquire and work with EDDI data. 
 URL: https://github.com/earthlab/eddi
 BugReports: https://github.com/earthlab/eddi/issues
