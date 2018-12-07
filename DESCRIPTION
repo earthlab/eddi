@@ -1,15 +1,21 @@
 Package: eddi
-Title: R Package to Get Evaporative Demand Drought Index Data
+Title: Get Evaporative Demand Drought Index Raster Data
 Version: 0.0.1
 Authors@R: 
     person(given = "Max",
            family = "Joseph",
            role = c("aut", "cre"),
            email = "maxwell.b.joseph@colorado.edu")
-Description: Allows users to easily acquire and work with EDDI data.
+Description: The eddi package allows users to easily acquire and work with the 
+  National Oceanographic and Atmospheric Administration Evaporative Demand 
+  Drought Index (EDDI) data product, which is useful for detecting drought at 
+  multiple time scales, from weekly "flash droughts" to month-spanning 
+  long-term droughts. This package finds and downloads raw EDDI data, 
+  then reads the data into R using the raster package. More information about
+  the EDDI data product can be found at <https://www.esrl.noaa.gov/psd/eddi/>.
 URL: https://github.com/earthlab/eddi
 BugReports: https://github.com/earthlab/eddi/issues
-License: MIT + file LICENSE
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Imports: 
