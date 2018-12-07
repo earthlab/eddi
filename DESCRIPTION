@@ -1,5 +1,5 @@
 Package: eddi
-Title: R package to get Evaporative Demand Drought Index data
+Title: R Package to Get Evaporative Demand Drought Index Data
 Version: 0.0.1
 Authors@R: 
     person(given = "Max",
@@ -22,4 +22,3 @@ Suggests:
     knitr,
     rmarkdown,
     testthat
-VignetteBuilder: knitr
