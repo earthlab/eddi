@@ -47,7 +47,9 @@ get_eddi <- function(date, timescale, dir = NA, overwrite = FALSE) {
   }
   local_path <- file.path(dir, basename(url))
   for (i in seq_along(url)) {
-    utils::download.file(url[i], local_path[i])
+    if (overwrite | !file.exists(local_path[i])) {
+      utils::download.file(url[i], local_path[i])
+    }
   }
 
   r <- raster::stack(local_path)
