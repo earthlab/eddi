@@ -21,6 +21,7 @@ LazyData: true
 Imports: 
     raster,
     rappdirs,
+    rgdal,
     utils
 RoxygenNote: 6.1.1
 Suggests: 
