@@ -6,10 +6,9 @@ Authors@R:
            family = "Joseph",
            role = c("aut", "cre"),
            email = "maxwell.b.joseph@colorado.edu")
-Description: The eddi package allows users to easily acquire and work with the 
-  National Oceanographic and Atmospheric Administration Evaporative Demand 
-  Drought Index (EDDI) data product, which is useful for detecting drought at 
-  multiple time scales, from weekly "flash droughts" to month-spanning 
+Description: Acquire and work with the National Oceanographic and Atmospheric 
+  Administration Evaporative Demand Drought Index (EDDI) data product, which 
+  detects drought at multiple time scales, from weekly "flash droughts" to 
   long-term droughts. This package finds and downloads raw EDDI data, 
   then reads the data into R using the raster package. More information about
   the EDDI data product can be found at <https://www.esrl.noaa.gov/psd/eddi/>.
@@ -20,7 +19,6 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     raster,
-    rappdirs,
     rgdal,
     utils
 RoxygenNote: 6.1.1

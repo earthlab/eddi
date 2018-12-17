@@ -5,7 +5,7 @@
   ],
   "@type": "SoftwareSourceCode",
   "identifier": "eddi",
-  "description": "The eddi package allows users to easily acquire and work with the \n  National Oceanographic and Atmospheric Administration Evaporative Demand \n  Drought Index (EDDI) data product, which is useful for detecting drought at \n  multiple time scales, from weekly \"flash droughts\" to month-spanning \n  long-term droughts. This package finds and downloads raw EDDI data, \n  then reads the data into R using the raster package. More information about\n  the EDDI data product can be found at <https://www.esrl.noaa.gov/psd/eddi/>.",
+  "description": "Allows users to easily acquire and work with the \n  National Oceanographic and Atmospheric Administration Evaporative Demand \n  Drought Index (EDDI) data product, which is useful for detecting drought at \n  multiple time scales, from weekly \"flash droughts\" to month-spanning \n  long-term droughts. This package finds and downloads raw EDDI data, \n  then reads the data into R using the raster package. More information about\n  the EDDI data product can be found at <https://www.esrl.noaa.gov/psd/eddi/>.",
   "name": "eddi: Get Evaporative Demand Drought Index Raster Data",
   "codeRepository": "https://github.com/earthlab/eddi",
   "issueTracker": "https://github.com/earthlab/eddi/issues",
@@ -99,18 +99,6 @@
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "rappdirs",
-      "name": "rappdirs",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=rappdirs"
-    },
-    {
-      "@type": "SoftwareApplication",
       "identifier": "rgdal",
       "name": "rgdal",
       "provider": {
@@ -129,7 +117,7 @@
   ],
   "releaseNotes": "https://github.com/earthlab/eddi/blob/master/NEWS.md",
   "readme": "https://github.com/earthlab/eddi/blob/master/README.md",
-  "fileSize": "86.718KB",
+  "fileSize": "86.774KB",
   "contIntegration": [
     "https://circleci.com/gh/earthlab/eddi/tree/master",
     "https://codecov.io/gh/earthlab/eddi"

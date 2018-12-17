@@ -39,17 +39,17 @@ test_that("Timescale units other than 'week' or 'month' raise errors", {
 
 test_that("Single dates return RasterStacks", {
   skip_on_cran()
-  r <- get_eddi(date = "2018-11-29", timescale = "1 month", dir = '.')
+  r <- get_eddi(date = "2018-11-29", timescale = "1 month", dir = ".")
   expect_is(r, "RasterStack")
   expect_equal(raster::nlayers(r), 1)
+  expect_true(file.exists("EDDI_ETrs_01mn_20181129.asc"))
   unlink(list.files(pattern = "*.asc"))
 })
 
 test_that("Multiple dates return RasterStacks", {
   skip_on_cran()
   dates <- seq(as.Date("2017-12-31"), as.Date("2018-01-01"), by = 1)
-  r <- get_eddi(date = dates, timescale = "1 month", dir = '.')
+  r <- get_eddi(date = dates, timescale = "1 month")
   expect_is(r, "RasterStack")
   expect_equal(raster::nlayers(r), 2)
-  unlink(list.files(pattern = "*.asc"))
 })

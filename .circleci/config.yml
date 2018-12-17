@@ -18,7 +18,7 @@ jobs:
             R -e "install.packages('DT')"
       - run:
           command: |
-            R -e 'devtools::check(cran = FALSE)'
+            R -e "devtools::check(cran = FALSE, args = c('--run-donttest'))"
       - save_cache:
           key: deps1-{{ .Branch }}-{{ checksum "DESCRIPTION" }}-{{ checksum ".circleci/config.yml" }}
           paths:
