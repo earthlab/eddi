@@ -6,7 +6,7 @@ Authors@R:
            family = "Joseph",
            role = c("aut", "cre"),
            email = "maxwell.b.joseph@colorado.edu")
-Description: The eddi package allows users to easily acquire and work with the 
+Description: Allows users to easily acquire and work with the 
   National Oceanographic and Atmospheric Administration Evaporative Demand 
   Drought Index (EDDI) data product, which is useful for detecting drought at 
   multiple time scales, from weekly "flash droughts" to month-spanning 
@@ -20,7 +20,6 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     raster,
-    rappdirs,
     rgdal,
     utils
 RoxygenNote: 6.1.1

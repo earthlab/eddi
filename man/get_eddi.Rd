@@ -4,7 +4,7 @@
 \alias{get_eddi}
 \title{Get EDDI data}
 \usage{
-get_eddi(date, timescale, dir = NA, overwrite = FALSE)
+get_eddi(date, timescale, dir = tempdir(), overwrite = FALSE)
 }
 \arguments{
 \item{date}{An object of class Date or a character string formatted as
@@ -20,7 +20,7 @@ be rounded to the nearest integer (e.g., "1.1 week" will be converted to
 "1 week").}
 
 \item{dir}{Directory to for downloaded EDDI data. By default this will be
-your cache directory. This should be a file path specified as a string.}
+a temporary directory. This should be a file path specified as a string.}
 
 \item{overwrite}{Boolean to indicate whether to overwrite EDDI data that
 already exist locally in \code{dir}. Defaults to FALSE.}
@@ -40,7 +40,7 @@ multiple timescales, including the 1 to 12 week and 1 to 12 months scales.
 For more information see \url{https://www.esrl.noaa.gov/psd/eddi/}
 }
 \examples{
-\dontrun{
+\donttest{
 get_eddi(date = "2018-01-01", timescale = "1 month")
 }
 

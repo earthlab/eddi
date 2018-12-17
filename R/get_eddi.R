@@ -19,19 +19,19 @@
 #' be rounded to the nearest integer (e.g., "1.1 week" will be converted to
 #' "1 week").
 #' @param dir Directory to for downloaded EDDI data. By default this will be
-#' your cache directory. This should be a file path specified as a string.
+#' a temporary directory. This should be a file path specified as a string.
 #' @param overwrite Boolean to indicate whether to overwrite EDDI data that
 #' already exist locally in \code{dir}. Defaults to FALSE.
 #' @return A Raster* object containing EDDI data. Each layer in this object
 #' corresponds to data for one date.
 #'
 #' @examples
-#' \dontrun{
+#' \donttest{
 #' get_eddi(date = "2018-01-01", timescale = "1 month")
 #' }
 #'
 #' @export
-get_eddi <- function(date, timescale, dir = NA, overwrite = FALSE) {
+get_eddi <- function(date, timescale, dir = tempdir(), overwrite = FALSE) {
   parsed_date <- parse_date(date)
   parsed_timescale <- parse_timescale(timescale)
   ts_unit_abbrev <- ifelse(parsed_timescale[['units']] == 'week', 'wk', 'mn')
@@ -42,9 +42,6 @@ get_eddi <- function(date, timescale, dir = NA, overwrite = FALSE) {
     "EDDI_ETrs_", parsed_timescale[["number"]], ts_unit_abbrev,
     "_", format(parsed_date, "%Y%m%d"), ".asc"
   )
-  if (is.na(dir)) {
-    dir <- rappdirs::user_cache_dir()
-  }
   local_path <- file.path(dir, basename(url))
   for (i in seq_along(url)) {
     if (overwrite | !file.exists(local_path[i])) {
