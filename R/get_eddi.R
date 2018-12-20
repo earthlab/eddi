@@ -32,6 +32,7 @@
 #'
 #' @export
 get_eddi <- function(date, timescale, dir = tempdir(), overwrite = FALSE) {
+  rgdal::getGDALCheckVersion()
   parsed_date <- parse_date(date)
   parsed_timescale <- parse_timescale(timescale)
   ts_unit_abbrev <- ifelse(parsed_timescale[['units']] == 'week', 'wk', 'mn')
