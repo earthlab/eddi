@@ -37,7 +37,7 @@ southern parks of Canada, and northern parts of Mexico.
 But, you may only be interested in a region of interest, as defined by a 
 shapefile. 
 Here, you will load a shapefile for the state of North Carolina that is 
-distributed by default with the [sp](https://cran.r-project.org/package=sp)
+distributed by default with the [sf](https://cran.r-project.org/package=sf)
 package. 
 
 ```{r load-roi-shapefile}
