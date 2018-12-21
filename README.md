@@ -47,7 +47,7 @@ eddi_data
 #> names       : EDDI_ETrs_01mn_20181129
 ```
 
-This will always return a `RasterStack` object with each layer in the
+This returns a `RasterStack` object with each layer in the
 stack corresponding to a date, that can be visualized using
 `raster::plot`. Here, large positive values indicate exceptionally dry
 conditions, and large negative values indicate exceptionally wet
