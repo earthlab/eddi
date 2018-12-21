@@ -1,0 +1,139 @@
+---
+title: "Get EDDI data over a region of interest and save a GeoTIFF"
+author: "Maxwell B. Joseph"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>", 
+  fig.width = 8, 
+  fig.height = 5
+)
+```
+
+The eddi R package provides easy access to the Evaporative Demand Drought Index
+(EDDI) data - an experimental drought monitoring and early warning guidance tool 
+produced by the National Oceanic and Atmospheric Administration. 
+EDDI is available at multiple timescales, from weekly to monthly, providing 
+insight into short-term flash droughts, and long-term droughts. 
+More information on the EDDI product is available on the 
+[NOAA EDDI homepage](https://www.esrl.noaa.gov/psd/eddi/).
+
+This vignette covers a common use case for EDDI: acquiring data over a region
+of interest defined by a shapefile, masking the EDDI data to that region, 
+and saving GeoTIFF files containing EDDI data for the region of interest. 
+
+## Defining a region of interest
+
+By default, the eddi package returns data for the continental United States, 
+southern parks of Canada, and northern parts of Mexico. 
+But, you may only be interested in a region of interest, as defined by a 
+shapefile. 
+Here, you will load a shapefile for the state of North Carolina that is 
+distributed by default with the [sp](https://cran.r-project.org/package=sp)
+package. 
+
+```{r load-roi-shapefile}
+library(sf)
+library(raster)
+library(eddi)
+
+roi <- st_read(system.file("shape/nc.shp", package="sf"))
+```
+
+If you are using a different shapefile, replace
+`system.file("shape/nc.shp", package="sf")` with its file path, e.g., 
+`st_read("path/to/file.shp")`.
+
+The `roi` object contains multiple columns of data, and a `geometry` column
+that contains spatial information on the region of interest, which in this 
+case consists of multiple counties. 
+
+```{r print-roi-shapefile}
+roi
+```
+
+Because you don't necessarily care about each county, but rather you want the
+entire state (including all counties) you can use a spatial union to join data
+from all counties:
+
+```{r}
+roi <- st_union(roi)
+roi
+```
+
+
+## Acquiring EDDI data
+
+To acquire EDDI data, you can use the `get_eddi()` function. 
+You will fetch the 1 week timescale data for July, 2018:
+
+```{r get-eddi-data}
+eddi_raster <- get_eddi(date = "2018-07-01", timescale = "1 week")
+```
+
+The `eddi_raster` object is a `RasterStack` with one layer, and you can see
+information on the spatial extent, resolution, and coordinate reference 
+system by printing the object: 
+
+```{r inspect-eddi}
+eddi_raster
+```
+
+Plot the data with a custom color palette to see what the data look like:
+
+```{r plot-eddi-conus}
+color_pal <- colorRampPalette(c("blue", "lightblue", "white", "pink", "red"))
+plot(eddi_raster, col = color_pal(255))
+```
+
+
+## Masking to the region of interest
+
+Now you want to subset or mask the EDDI data to the region of interest. 
+First, you need to ensure that the raster data and the polygon for the region 
+of interest have the same coordinate reference system. 
+
+```{r reproject-to-same-crs}
+roi_reprojected <- st_transform(roi, crs = projection(eddi_raster))
+```
+
+Now, graphically verify that they align as expected: 
+
+```{r plot-eddi-with-shp}
+plot(eddi_raster, col = color_pal(255))
+plot(roi_reprojected, add = TRUE)
+```
+
+Now, you can crop the EDDI data to match extents with the region of interest, 
+then mask the raster set all values outside of the region of interest to `NA`. 
+Because the raster package requires sp objects, rather than sf objects, you
+will coerce our roi to a sp object first. 
+
+```{r mask-eddi}
+roi_sp <- as(roi_reprojected, 'Spatial')
+cropped_eddi <- crop(eddi_raster, roi_sp)
+masked_eddi <- mask(cropped_eddi, roi_sp)
+```
+
+You can plot the masked EDDI raster along with the ROI to confirm:
+
+```{r}
+plot(masked_eddi, col = color_pal(255))
+plot(roi_sp, add = TRUE)
+```
+
+## Saving GeoTIFF output
+
+To write a GeoTIFF file of our `masked_eddi` object, you can use `writeRaster`:
+
+```{r write-tif, eval = FALSE}
+writeRaster(masked_eddi, 'eddi-over-roi.tif')
+```
