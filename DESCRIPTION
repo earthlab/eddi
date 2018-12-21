@@ -5,7 +5,8 @@ Authors@R:
     person(given = "Max",
            family = "Joseph",
            role = c("aut", "cre"),
-           email = "maxwell.b.joseph@colorado.edu")
+           email = "maxwell.b.joseph@colorado.edu", 
+           comment = c(ORCID = "0000-0002-7745-9990"))
 Description: Acquire and work with the National Oceanographic and Atmospheric 
   Administration Evaporative Demand Drought Index (EDDI) data product, which 
   detects drought at multiple time scales, from weekly "flash droughts" to 
@@ -25,5 +26,9 @@ RoxygenNote: 6.1.1
 Suggests: 
     covr,
     knitr,
+    maptools,
     rmarkdown,
+    sf, 
+    sp,
     testthat
+VignetteBuilder: knitr
