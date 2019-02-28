@@ -16,6 +16,9 @@ knitr::opts_chunk$set(
   fig.width = 8, 
   fig.height = 5
 )
+
+NOT_CRAN <- identical(tolower(Sys.getenv("NOT_CRAN")), "true")
+knitr::opts_chunk$set(purl = NOT_CRAN, eval = NOT_CRAN)
 ```
 
 The eddi R package provides easy access to the Evaporative Demand Drought Index
