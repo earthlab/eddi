@@ -13,13 +13,11 @@
 * This is a new release.
 
 Possibly mis-spelled words in DESCRIPTION:
-  EDDI (11:18, 13:60, 15:7)
-  Evaporative (2:12, 10:57)
-  eddi (9:18)
+  EDDI (11:52, 13:60, 15:7)
+  Evaporative (2:12, 11:18)
   
 - EDDI is an acronym for Evaporative Demand Drought Index.
 - Evaporative means "pertaining to evaporation"
-- eddi is the name of the package
 
 
 ## Downstream dependencies
