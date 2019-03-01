@@ -135,8 +135,12 @@ plot(roi_sp, add = TRUE)
 
 ## Saving GeoTIFF output
 
-To write a GeoTIFF file of our `masked_eddi` object, you can use `writeRaster`:
+To write a GeoTIFF file of our `masked_eddi` object, you can use `writeRaster`. 
+You can modify the `output_directory` below to save this file in a particular
+location on your filesystem.
 
 ```{r write-tif, eval = FALSE}
-writeRaster(masked_eddi, 'eddi-over-roi.tif')
+output_directory <- tempdir()
+output_file <- file.path(output_directory, 'eddi-over-roi.tif')
+writeRaster(masked_eddi, output_file)
 ```
