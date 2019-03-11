@@ -26,10 +26,8 @@
 #' corresponds to data for one date.
 #'
 #' @examples
-#' \donttest{
 #' get_eddi(date = "2018-01-01", timescale = "1 month")
-#' }
-#'
+#' 
 #' @export
 get_eddi <- function(date, timescale, dir = tempdir(), overwrite = FALSE) {
   parsed_date <- parse_date(date)

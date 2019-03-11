@@ -40,8 +40,6 @@ multiple timescales, including the 1 to 12 week and 1 to 12 months scales.
 For more information see \url{https://www.esrl.noaa.gov/psd/eddi/}
 }
 \examples{
-\donttest{
 get_eddi(date = "2018-01-01", timescale = "1 month")
-}
 
 }

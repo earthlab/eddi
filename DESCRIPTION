@@ -8,10 +8,10 @@ Authors@R:
            email = "maxwell.b.joseph@colorado.edu", 
            comment = c(ORCID = "0000-0002-7745-9990"))
 Description: Finds and downloads raw Evaporative Demand Drought Index (EDDI) 
-  data, then reads the data into R using the 'raster' package. The 
-  EDDI product detects drought at multiple time scales, from weekly 
-  "flash droughts" to long-term droughts. More information about the EDDI data 
-  product can be found at <https://www.esrl.noaa.gov/psd/eddi/>.
+    data, then reads the data into R using the 'raster' package. The 
+    EDDI product detects drought at multiple time scales, from weekly 
+    "flash droughts" to long-term droughts. More information about the EDDI data 
+    product can be found at <https://www.esrl.noaa.gov/psd/eddi/>.
 URL: https://github.com/earthlab/eddi
 BugReports: https://github.com/earthlab/eddi/issues
 License: GPL-3
