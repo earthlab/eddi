@@ -41,6 +41,7 @@ For more information see \url{https://www.esrl.noaa.gov/psd/eddi/}
 }
 \examples{
 \donttest{
+# note that downloads may take a while, depending on internet connection
 get_eddi(date = "2018-01-01", timescale = "1 month")
 }
 
