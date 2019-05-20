@@ -1,11 +1,8 @@
 {
-  "@context": [
-    "https://doi.org/10.5063/schema/codemeta-2.0",
-    "http://schema.org"
-  ],
+  "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
   "@type": "SoftwareSourceCode",
   "identifier": "eddi",
-  "description": "Finds and downloads raw Evaporative Demand Drought Index (EDDI) \n    data, then reads the data into R using the 'raster' package. The \n    EDDI product detects drought at multiple time scales, from weekly \n    \"flash droughts\" to long-term droughts. More information about the EDDI data \n    product can be found at <https://www.esrl.noaa.gov/psd/eddi/>.",
+  "description": "Finds and downloads raw Evaporative Demand Drought\n    Index (EDDI) data, then reads the data into 'R' using the 'raster'\n    package. The EDDI product detects drought at multiple time scales,\n    from weekly \"flash droughts\" to long-term droughts. More information\n    about the EDDI data product can be found at\n    <https://www.esrl.noaa.gov/psd/eddi/>.",
   "name": "eddi: Get Evaporative Demand Drought Index Raster Data",
   "codeRepository": "https://github.com/earthlab/eddi",
   "issueTracker": "https://github.com/earthlab/eddi/issues",
@@ -14,10 +11,10 @@
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.5.2",
+    "version": "3.6.0",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.5.2 (2018-12-20)",
+  "runtimePlatform": "R version 3.6.0 (2019-04-26)",
   "author": [
     {
       "@type": "Person",
@@ -27,6 +24,9 @@
       "@id": "https://orcid.org/0000-0002-7745-9990"
     }
   ],
+  "contributor": {},
+  "copyrightHolder": {},
+  "funder": {},
   "maintainer": [
     {
       "@type": "Person",
@@ -143,10 +143,6 @@
   ],
   "releaseNotes": "https://github.com/earthlab/eddi/blob/master/NEWS.md",
   "readme": "https://github.com/earthlab/eddi/blob/master/README.md",
-  "fileSize": "119.463KB",
-  "contIntegration": [
-    "https://circleci.com/gh/earthlab/eddi/tree/master",
-    "https://codecov.io/gh/earthlab/eddi"
-  ],
-  "developmentStatus": "https://www.repostatus.org/#wip"
+  "fileSize": "89.119KB",
+  "contIntegration": ["https://circleci.com/gh/earthlab/eddi/tree/master", "https://ci.appveyor.com/project/earthlab/eddi", "https://codecov.io/gh/earthlab/eddi"]
 }
