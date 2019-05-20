@@ -71,10 +71,8 @@ For the science behind EDDI, see these two papers:
   - M. Hobbins, A. Wood, D. McEvoy, J. Huntington, C. Morton, M.
     Anderson, and C. Hain (June 2016): The Evaporative Demand Drought
     Index: Part I – Linking Drought Evolution to Variations in
-    Evaporative Demand. J. Hydrometeor., 17(6),1745-1761,
-    <doi:10.1175/JHM-D-15-0121.1>.  
+    Evaporative Demand. J. Hydrometeor., 17(6), 1745-1761.  
   - D. J. McEvoy, J. L. Huntington, M. T. Hobbins, A. Wood, C. Morton,
     M. Anderson, and C. Hain (June 2016): The Evaporative Demand Drought
     Index: Part II – CONUS-wide Assessment Against Common Drought
-    Indicators. J. Hydrometeor., 17(6), 1763-1779,
-    <doi:10.1175/JHM-D-15-0122.1>.
+    Indicators. J. Hydrometeor., 17(6), 1763-1779.
