@@ -83,7 +83,7 @@
       <h1>Get EDDI data over a region of interest and save a GeoTIFF</h1>
                         <h4 class="author">Maxwell B. Joseph</h4>
             
-            <h4 class="date">2019-03-11</h4>
+            <h4 class="date">2019-05-20</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/earthlab/eddi/blob/master/vignettes/eddi-roi-tutorial.Rmd"><code>vignettes/eddi-roi-tutorial.Rmd</code></a></small>
       <div class="hidden name"><code>eddi-roi-tutorial.Rmd</code></div>
@@ -105,7 +105,7 @@
 <a class="sourceLine" id="cb1-5" title="5"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(eddi)</a>
 <a class="sourceLine" id="cb1-6" title="6"></a>
 <a class="sourceLine" id="cb1-7" title="7">roi &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/sf/topics/st_read">st_read</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/system.file">system.file</a></span>(<span class="st">"shape/nc.shp"</span>, <span class="dt">package=</span><span class="st">"sf"</span>))</a>
-<a class="sourceLine" id="cb1-8" title="8"><span class="co">#&gt; Reading layer `nc' from data source `/home/max/R/x86_64-pc-linux-gnu-library/3.5/sf/shape/nc.shp' using driver `ESRI Shapefile'</span></a>
+<a class="sourceLine" id="cb1-8" title="8"><span class="co">#&gt; Reading layer `nc' from data source `/home/max/R/x86_64-pc-linux-gnu-library/3.6/sf/shape/nc.shp' using driver `ESRI Shapefile'</span></a>
 <a class="sourceLine" id="cb1-9" title="9"><span class="co">#&gt; Simple feature collection with 100 features and 14 fields</span></a>
 <a class="sourceLine" id="cb1-10" title="10"><span class="co">#&gt; geometry type:  MULTIPOLYGON</span></a>
 <a class="sourceLine" id="cb1-11" title="11"><span class="co">#&gt; dimension:      XY</span></a>
@@ -162,12 +162,12 @@
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">eddi_raster &lt;-<span class="st"> </span><span class="kw"><a href="../reference/get_eddi.html">get_eddi</a></span>(<span class="dt">date =</span> <span class="st">"2018-07-01"</span>, <span class="dt">timescale =</span> <span class="st">"1 week"</span>)</a></code></pre></div>
 <p>The <code>eddi_raster</code> object is a <code>RasterStack</code> with one layer, and you can see information on the spatial extent, resolution, and coordinate reference system by printing the object:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">eddi_raster</a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="co">#&gt; class       : RasterStack </span></a>
-<a class="sourceLine" id="cb5-3" title="3"><span class="co">#&gt; dimensions  : 224, 464, 103936, 1  (nrow, ncol, ncell, nlayers)</span></a>
-<a class="sourceLine" id="cb5-4" title="4"><span class="co">#&gt; resolution  : 0.125, 0.125  (x, y)</span></a>
-<a class="sourceLine" id="cb5-5" title="5"><span class="co">#&gt; extent      : -125, -67, 25, 53  (xmin, xmax, ymin, ymax)</span></a>
-<a class="sourceLine" id="cb5-6" title="6"><span class="co">#&gt; coord. ref. : +init=epsg:4326 +proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0 </span></a>
-<a class="sourceLine" id="cb5-7" title="7"><span class="co">#&gt; names       : EDDI_ETrs_01wk_20180701</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-2" title="2"><span class="co">#&gt; class      : RasterStack </span></a>
+<a class="sourceLine" id="cb5-3" title="3"><span class="co">#&gt; dimensions : 224, 464, 103936, 1  (nrow, ncol, ncell, nlayers)</span></a>
+<a class="sourceLine" id="cb5-4" title="4"><span class="co">#&gt; resolution : 0.125, 0.125  (x, y)</span></a>
+<a class="sourceLine" id="cb5-5" title="5"><span class="co">#&gt; extent     : -125, -67, 25, 53  (xmin, xmax, ymin, ymax)</span></a>
+<a class="sourceLine" id="cb5-6" title="6"><span class="co">#&gt; crs        : +init=epsg:4326 +proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0 </span></a>
+<a class="sourceLine" id="cb5-7" title="7"><span class="co">#&gt; names      : EDDI_ETrs_01wk_20180701</span></a></code></pre></div>
 <p>Plot the data with a custom color palette to see what the data look like:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1">color_pal &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/grDevices/topics/colorRamp">colorRampPalette</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"blue"</span>, <span class="st">"lightblue"</span>, <span class="st">"white"</span>, <span class="st">"pink"</span>, <span class="st">"red"</span>))</a>
 <a class="sourceLine" id="cb6-2" title="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/sf/topics/plot">plot</a></span>(eddi_raster, <span class="dt">col =</span> <span class="kw">color_pal</span>(<span class="dv">255</span>))</a></code></pre></div>
