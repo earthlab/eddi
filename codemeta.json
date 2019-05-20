@@ -1,5 +1,8 @@
 {
-  "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
+  "@context": [
+    "https://doi.org/10.5063/schema/codemeta-2.0",
+    "http://schema.org"
+  ],
   "@type": "SoftwareSourceCode",
   "identifier": "eddi",
   "description": "Finds and downloads raw Evaporative Demand Drought\n    Index (EDDI) data, then reads the data into 'R' using the 'raster'\n    package. The EDDI product detects drought at multiple time scales,\n    from weekly \"flash droughts\" to long-term droughts. More information\n    about the EDDI data product can be found at\n    <https://www.esrl.noaa.gov/psd/eddi/>.",
@@ -143,6 +146,10 @@
   ],
   "releaseNotes": "https://github.com/earthlab/eddi/blob/master/NEWS.md",
   "readme": "https://github.com/earthlab/eddi/blob/master/README.md",
-  "fileSize": "89.119KB",
-  "contIntegration": ["https://circleci.com/gh/earthlab/eddi/tree/master", "https://ci.appveyor.com/project/earthlab/eddi", "https://codecov.io/gh/earthlab/eddi"]
+  "fileSize": "89.124KB",
+  "contIntegration": [
+    "https://circleci.com/gh/earthlab/eddi/tree/master",
+    "https://ci.appveyor.com/project/earthlab/eddi",
+    "https://codecov.io/gh/earthlab/eddi"
+  ]
 }
