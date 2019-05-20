@@ -146,10 +146,11 @@
   ],
   "releaseNotes": "https://github.com/earthlab/eddi/blob/master/NEWS.md",
   "readme": "https://github.com/earthlab/eddi/blob/master/README.md",
-  "fileSize": "89.128KB",
+  "fileSize": "119.485KB",
   "contIntegration": [
     "https://circleci.com/gh/earthlab/eddi/tree/master",
     "https://ci.appveyor.com/project/earthlab/eddi",
     "https://codecov.io/gh/earthlab/eddi"
-  ]
+  ],
+  "developmentStatus": "https://www.repostatus.org/#active"
 }
