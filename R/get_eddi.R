@@ -51,7 +51,10 @@ get_eddi <- function(date, timescale, dir = tempdir(), overwrite = FALSE) {
   }
 
   r <- raster::stack(local_path)
-  raster::crs(r) <- "+init=epsg:4326"
+  out_proj_string <- "+init=epsg:4326"
+  proj_string_valid <- rgdal::checkCRSArgs(out_proj_string)[[1]]
+  stopifnot(proj_string_valid)
+  raster::crs(r) <- out_proj_string
   r
 }
 

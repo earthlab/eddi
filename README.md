@@ -7,6 +7,9 @@
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/earthlab/eddi?branch=master&svg=true)](https://ci.appveyor.com/project/earthlab/eddi)
 [![Codecov](https://img.shields.io/codecov/c/github/earthlab/eddi.svg)](https://codecov.io/gh/earthlab/eddi)
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
 The eddi R package facilitates access to the NOAA [Evaporative Demand
 Drought Index](https://www.esrl.noaa.gov/psd/eddi/) (EDDI) data product.
