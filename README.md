@@ -7,9 +7,6 @@
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/earthlab/eddi?branch=master&svg=true)](https://ci.appveyor.com/project/earthlab/eddi)
 [![Codecov](https://img.shields.io/codecov/c/github/earthlab/eddi.svg)](https://codecov.io/gh/earthlab/eddi)
-[![Project Status: WIP – Initial development is in progress, but there
-has not yet been a stable, usable release suitable for the
-public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 
 The eddi R package facilitates access to the NOAA [Evaporative Demand
 Drought Index](https://www.esrl.noaa.gov/psd/eddi/) (EDDI) data product.
@@ -39,15 +36,15 @@ library(eddi)
 
 eddi_data <- get_eddi(date = "2018-11-29", timescale = "1 month")
 eddi_data
-#> class       : RasterStack 
-#> dimensions  : 224, 464, 103936, 1  (nrow, ncol, ncell, nlayers)
-#> resolution  : 0.125, 0.125  (x, y)
-#> extent      : -125, -67, 25, 53  (xmin, xmax, ymin, ymax)
-#> coord. ref. : +init=epsg:4326 +proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0 
-#> names       : EDDI_ETrs_01mn_20181129
+#> class      : RasterStack 
+#> dimensions : 224, 464, 103936, 1  (nrow, ncol, ncell, nlayers)
+#> resolution : 0.125, 0.125  (x, y)
+#> extent     : -125, -67, 25, 53  (xmin, xmax, ymin, ymax)
+#> crs        : +init=epsg:4326 +proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0 
+#> names      : EDDI_ETrs_01mn_20181129
 ```
 
-This returns a `RasterStack` object with each layer in the
+This will always return a `RasterStack` object with each layer in the
 stack corresponding to a date, that can be visualized using
 `raster::plot`. Here, large positive values indicate exceptionally dry
 conditions, and large negative values indicate exceptionally wet
