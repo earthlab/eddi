@@ -16,7 +16,14 @@ Drought Index](https://www.esrl.noaa.gov/psd/eddi/) (EDDI) data product.
 
 ## Installation
 
-You can install the development version of eddi with devtools:
+Install the most recently released version of the eddi package from
+CRAN:
+
+``` r
+install.packages('eddi')
+```
+
+Or, you can install the development version of eddi with devtools:
 
 ``` r
 # install.packages("devtools")
