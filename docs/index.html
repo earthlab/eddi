@@ -97,28 +97,30 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the development version of eddi with devtools:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="co"># install.packages("devtools")</span></a>
-<a class="sourceLine" id="cb1-2" title="2">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"earthlab/eddi"</span>)</a></code></pre></div>
+<p>Install the most recently released version of the eddi package from CRAN:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">'eddi'</span>)</a></code></pre></div>
+<p>Or, you can install the development version of eddi with devtools:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="co"># install.packages("devtools")</span></a>
+<a class="sourceLine" id="cb2-2" title="2">devtools<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/devtools/topics/reexports">install_github</a></span>(<span class="st">"earthlab/eddi"</span>)</a></code></pre></div>
 </div>
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <p>The EDDI product exists for multiple timescales, including the 1 to 12 week and 1 to 12 months scales. Shorter time scales can detect short term droughts, e.g., “flash droughts”, and longer time scales are appropriate for detecting long term drought. For more information see <a href="https://www.esrl.noaa.gov/psd/eddi/" class="uri">https://www.esrl.noaa.gov/psd/eddi/</a>.</p>
 <p>This is a basic example which shows you how to get EDDI data for Nov 29, 2018 at the one month timescale:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(eddi)</a>
-<a class="sourceLine" id="cb2-2" title="2"></a>
-<a class="sourceLine" id="cb2-3" title="3">eddi_data &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_eddi.html">get_eddi</a></span>(<span class="dt">date =</span> <span class="st">"2018-11-29"</span>, <span class="dt">timescale =</span> <span class="st">"1 month"</span>)</a>
-<a class="sourceLine" id="cb2-4" title="4">eddi_data</a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="co">#&gt; class      : RasterStack </span></a>
-<a class="sourceLine" id="cb2-6" title="6"><span class="co">#&gt; dimensions : 224, 464, 103936, 1  (nrow, ncol, ncell, nlayers)</span></a>
-<a class="sourceLine" id="cb2-7" title="7"><span class="co">#&gt; resolution : 0.125, 0.125  (x, y)</span></a>
-<a class="sourceLine" id="cb2-8" title="8"><span class="co">#&gt; extent     : -125, -67, 25, 53  (xmin, xmax, ymin, ymax)</span></a>
-<a class="sourceLine" id="cb2-9" title="9"><span class="co">#&gt; crs        : +init=epsg:4326 +proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0 </span></a>
-<a class="sourceLine" id="cb2-10" title="10"><span class="co">#&gt; names      : EDDI_ETrs_01mn_20181129</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(eddi)</a>
+<a class="sourceLine" id="cb3-2" title="2"></a>
+<a class="sourceLine" id="cb3-3" title="3">eddi_data &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_eddi.html">get_eddi</a></span>(<span class="dt">date =</span> <span class="st">"2018-11-29"</span>, <span class="dt">timescale =</span> <span class="st">"1 month"</span>)</a>
+<a class="sourceLine" id="cb3-4" title="4">eddi_data</a>
+<a class="sourceLine" id="cb3-5" title="5"><span class="co">#&gt; class      : RasterStack </span></a>
+<a class="sourceLine" id="cb3-6" title="6"><span class="co">#&gt; dimensions : 224, 464, 103936, 1  (nrow, ncol, ncell, nlayers)</span></a>
+<a class="sourceLine" id="cb3-7" title="7"><span class="co">#&gt; resolution : 0.125, 0.125  (x, y)</span></a>
+<a class="sourceLine" id="cb3-8" title="8"><span class="co">#&gt; extent     : -125, -67, 25, 53  (xmin, xmax, ymin, ymax)</span></a>
+<a class="sourceLine" id="cb3-9" title="9"><span class="co">#&gt; crs        : +init=epsg:4326 +proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0 </span></a>
+<a class="sourceLine" id="cb3-10" title="10"><span class="co">#&gt; names      : EDDI_ETrs_01mn_20181129</span></a></code></pre></div>
 <p>This will always return a <code>RasterStack</code> object with each layer in the stack corresponding to a date, that can be visualized using <code><a href="https://www.rdocumentation.org/packages/raster/topics/plot">raster::plot</a></code>. Here, large positive values indicate exceptionally dry conditions, and large negative values indicate exceptionally wet conditions, with values of 0 indicating median EDDI values.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">color_pal &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/grDevices/topics/colorRamp">colorRampPalette</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"blue"</span>, <span class="st">"lightblue"</span>, <span class="st">"white"</span>, <span class="st">"pink"</span>, <span class="st">"red"</span>))</a>
-<a class="sourceLine" id="cb3-2" title="2">raster<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/raster/topics/plot">plot</a></span>(eddi_data, <span class="dt">col =</span> <span class="kw">color_pal</span>(<span class="dv">255</span>), <span class="dt">main =</span> <span class="st">"EDDI data for 2018-11-29"</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">color_pal &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/grDevices/topics/colorRamp">colorRampPalette</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"blue"</span>, <span class="st">"lightblue"</span>, <span class="st">"white"</span>, <span class="st">"pink"</span>, <span class="st">"red"</span>))</a>
+<a class="sourceLine" id="cb4-2" title="2">raster<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/raster/topics/plot">plot</a></span>(eddi_data, <span class="dt">col =</span> <span class="kw">color_pal</span>(<span class="dv">255</span>), <span class="dt">main =</span> <span class="st">"EDDI data for 2018-11-29"</span>)</a></code></pre></div>
 <p><img src="reference/figures/README-plot-example-1.png" width="100%"></p>
 </div>
 <div id="eddi-resources" class="section level2">
@@ -139,6 +141,8 @@
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
+<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=eddi">https://​cloud.r-project.org/​package=eddi</a>
+</li>
 <li>Browse source code at <br><a href="https://github.com/earthlab/eddi">https://​github.com/​earthlab/​eddi</a>
 </li>
 <li>Report a bug at <br><a href="https://github.com/earthlab/eddi/issues">https://​github.com/​earthlab/​eddi/​issues</a>
