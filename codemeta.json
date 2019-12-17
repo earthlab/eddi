@@ -14,10 +14,10 @@
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.6.0",
+    "version": "3.6.1",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.6.0 (2019-04-26)",
+  "runtimePlatform": "R version 3.6.1 (2019-07-05)",
   "author": [
     {
       "@type": "Person",
@@ -146,11 +146,17 @@
   ],
   "releaseNotes": "https://github.com/earthlab/eddi/blob/master/NEWS.md",
   "readme": "https://github.com/earthlab/eddi/blob/master/README.md",
-  "fileSize": "119.485KB",
+  "fileSize": "89.181KB",
   "contIntegration": [
     "https://circleci.com/gh/earthlab/eddi/tree/master",
     "https://ci.appveyor.com/project/earthlab/eddi",
     "https://codecov.io/gh/earthlab/eddi"
   ],
-  "developmentStatus": "https://www.repostatus.org/#active"
+  "developmentStatus": "https://www.repostatus.org/#active",
+  "provider": {
+    "@id": "https://cran.r-project.org",
+    "@type": "Organization",
+    "name": "Comprehensive R Archive Network (CRAN)",
+    "url": "https://cran.r-project.org"
+  }
 }

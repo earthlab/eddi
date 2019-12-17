@@ -10,6 +10,7 @@ status](https://ci.appveyor.com/api/projects/status/github/earthlab/eddi?branch=
 [![Project Status: Active – The project has reached a stable, usable
 state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+[![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/eddi)](https://cran.r-project.org/package=eddi)
 [![rstudio mirror
 downloads](http://cranlogs.r-pkg.org/badges/eddi)](https://github.com/metacran/cranlogs.app)
 
