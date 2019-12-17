@@ -13,6 +13,7 @@ developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.re
 [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/eddi)](https://cran.r-project.org/package=eddi)
 [![rstudio mirror
 downloads](http://cranlogs.r-pkg.org/badges/eddi)](https://github.com/metacran/cranlogs.app)
+[![DOI](https://zenodo.org/badge/160215566.svg)](https://zenodo.org/badge/latestdoi/160215566)
 
 The eddi R package facilitates access to the NOAA [Evaporative Demand
 Drought Index](https://www.esrl.noaa.gov/psd/eddi/) (EDDI) data product.
