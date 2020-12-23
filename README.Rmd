@@ -15,9 +15,7 @@ knitr::opts_chunk$set(
 
 # eddi: R package for the NOAA Evaporative Demand Drought Index
 
-
 [![R-CMD-check](https://github.com/earthlab/eddi/workflows/R-CMD-check/badge.svg)](https://github.com/earthlab/eddi/actions)
-[![CircleCI](https://circleci.com/gh/earthlab/eddi/tree/master.svg?style=svg)](https://circleci.com/gh/earthlab/eddi/tree/master)
 [![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/earthlab/eddi?branch=master&svg=true)](https://ci.appveyor.com/project/earthlab/eddi)
 [![Codecov](https://img.shields.io/codecov/c/github/earthlab/eddi.svg)](https://codecov.io/gh/earthlab/eddi)
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
