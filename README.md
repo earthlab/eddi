@@ -54,7 +54,7 @@ eddi_data
 #> dimensions : 224, 464, 103936, 1  (nrow, ncol, ncell, nlayers)
 #> resolution : 0.125, 0.125  (x, y)
 #> extent     : -125, -67, 25, 53  (xmin, xmax, ymin, ymax)
-#> crs        : +init=epsg:4326 +proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0 
+#> crs        : +proj=longlat +datum=WGS84 +no_defs 
 #> names      : EDDI_ETrs_01mn_20181129
 ```
 
@@ -62,8 +62,7 @@ This will always return a `RasterStack` object with each layer in the
 stack corresponding to a date, that can be visualized using
 `raster::plot`. Here, large positive values indicate exceptionally dry
 conditions, and large negative values indicate exceptionally wet
-conditions, with values of 0 indicating median EDDI
-values.
+conditions, with values of 0 indicating median EDDI values.
 
 ``` r
 color_pal <- colorRampPalette(c("blue", "lightblue", "white", "pink", "red"))
@@ -79,11 +78,11 @@ A user guide for EDDI can be found here:
 
 For the science behind EDDI, see these two papers:
 
-  - M. Hobbins, A. Wood, D. McEvoy, J. Huntington, C. Morton, M.
+-   M. Hobbins, A. Wood, D. McEvoy, J. Huntington, C. Morton, M.
     Anderson, and C. Hain (June 2016): The Evaporative Demand Drought
     Index: Part I – Linking Drought Evolution to Variations in
     Evaporative Demand. J. Hydrometeor., 17(6), 1745-1761.  
-  - D. J. McEvoy, J. L. Huntington, M. T. Hobbins, A. Wood, C. Morton,
-    M. Anderson, and C. Hain (June 2016): The Evaporative Demand Drought
-    Index: Part II – CONUS-wide Assessment Against Common Drought
-    Indicators. J. Hydrometeor., 17(6), 1763-1779.
+-   D. J. McEvoy, J. L. Huntington, M. T. Hobbins, A. Wood, C.
+    Morton, M. Anderson, and C. Hain (June 2016): The Evaporative Demand
+    Drought Index: Part II – CONUS-wide Assessment Against Common
+    Drought Indicators. J. Hydrometeor., 17(6), 1763-1779.

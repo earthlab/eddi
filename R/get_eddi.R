@@ -30,7 +30,7 @@
 #' # note that downloads may take a while, depending on internet connection
 #' get_eddi(date = "2018-01-01", timescale = "1 month")
 #' }
-#' 
+#'
 #' @export
 get_eddi <- function(date, timescale, dir = tempdir(), overwrite = FALSE) {
   parsed_date <- parse_date(date)
@@ -51,10 +51,7 @@ get_eddi <- function(date, timescale, dir = tempdir(), overwrite = FALSE) {
   }
 
   r <- raster::stack(local_path)
-  out_proj_string <- "+init=epsg:4326"
-  proj_string_valid <- rgdal::checkCRSArgs(out_proj_string)[[1]]
-  stopifnot(proj_string_valid)
-  raster::crs(r) <- out_proj_string
+  raster::crs(r) <- "+init=epsg:4326"
   r
 }
 
