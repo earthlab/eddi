@@ -34,7 +34,7 @@ Or, you can install the development version of eddi with devtools:
 devtools::install_github("earthlab/eddi")
 ```
 
-## Example
+## Exampless
 
 The EDDI product exists for multiple timescales, including the 1 to 12
 week and 1 to 12 months scales. Shorter time scales can detect short
